@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 592560854}
   - component: {fileID: 592560853}
   m_Layer: 5
-  m_Name: Menu
+  m_Name: Bruger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 1495321980}
   - component: {fileID: 1495321979}
   m_Layer: 5
-  m_Name: Inventory
+  m_Name: Broccoli
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
