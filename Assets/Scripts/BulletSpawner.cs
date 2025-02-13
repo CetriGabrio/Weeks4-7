@@ -8,6 +8,8 @@ public class BulletSpawner : MonoBehaviour
     public Transform bulletSpawnPoint;
     public float bulletSpeed = 10.0f;
 
+    public AudioClip fireSound;
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -15,6 +17,8 @@ public class BulletSpawner : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             Bullet bulletScript = bullet.GetComponent<Bullet>();
             bulletScript.speed = bulletSpeed;
+
+            AudioSource.PlayClipAtPoint(fireSound, transform.position);
         }
     }
 }
