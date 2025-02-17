@@ -12,15 +12,20 @@ public class CarMovement : MonoBehaviour
     {
         leftScreenEdge = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x;
         rightScreenEdge = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0)).x;
+
+        Destroy(gameObject, 5f);
     }
 
     void Update()
     {
-        transform.Translate(Vector3.right * speed * Time.deltaTime);
-
-        if (transform.position.x > rightScreenEdge)
+        if (gameObject != null)
         {
-            transform.position = new Vector3(leftScreenEdge, transform.position.y, transform.position.z);
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
+
+            if (transform.position.x > rightScreenEdge)
+            {
+                transform.position = new Vector3(leftScreenEdge, transform.position.y, transform.position.z);
+            }
         }
     }
 }
