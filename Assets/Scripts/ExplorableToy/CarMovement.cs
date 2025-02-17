@@ -5,6 +5,7 @@ using UnityEngine;
 public class CarMovement : MonoBehaviour
 {
     public float speed = 5f;
+    public float acceleration = 0f;
     private float leftScreenEdge;
     private float rightScreenEdge;
 
