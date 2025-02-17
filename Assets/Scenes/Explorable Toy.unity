@@ -1630,6 +1630,12 @@ MonoBehaviour:
     m_Options:
     - m_Text: Police Car
       m_Image: {fileID: 489548066, guid: 750385e77543719429c6355018de1ded, type: 3}
+    - m_Text: Race Car
+      m_Image: {fileID: -1841743668, guid: 750385e77543719429c6355018de1ded, type: 3}
+    - m_Text: Camion
+      m_Image: {fileID: -1757976706, guid: 750385e77543719429c6355018de1ded, type: 3}
+    - m_Text: Tractor
+      m_Image: {fileID: 1654065619, guid: 750385e77543719429c6355018de1ded, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
