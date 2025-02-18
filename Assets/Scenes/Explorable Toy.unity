@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 63805872}
   - component: {fileID: 63805871}
   - component: {fileID: 63805870}
+  - component: {fileID: 63805873}
   m_Layer: 5
   m_Name: SpawnButton
   m_TagString: Untagged
@@ -279,6 +280,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63805868}
   m_CullTransparentMesh: 1
+--- !u!114 &63805873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63805868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a3d14f2599f2d468d79bb6161604b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carPrefab: {fileID: 2559890947634848755, guid: cd88d171e093b1b42b51fd648047978a, type: 3}
+  spawnButton: {fileID: 63805870}
 --- !u!1 &115649872
 GameObject:
   m_ObjectHideFlags: 0
