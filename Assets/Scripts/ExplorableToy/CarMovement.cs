@@ -32,5 +32,8 @@ public class CarMovement : MonoBehaviour
     {
         this.speed = speed;
         this.acceleration = acceleration;
+
+        Debug.Log("Car Speed: " + speed);
+        Debug.Log("Car Acceleration: " + acceleration);
     }
 }

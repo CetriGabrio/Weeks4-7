@@ -23,6 +23,7 @@ public class MenuController : MonoBehaviour
         //{
         //UpdateCarPreview(carDropdown.value);
         // }
+
         UpdateCarPreview(carDropdown.value);
         speedSlider.value = carSpeed;
         accelerationSlider.value = carAcceleration;
@@ -31,11 +32,13 @@ public class MenuController : MonoBehaviour
     public void SetCarSpeed(float newSpeed)
     {
         carSpeed = newSpeed;
+        Debug.Log("Car Speed Slider Value: " + newSpeed); 
     }
 
     public void SetCarAcceleration(float newAcceleration)
     {
         carAcceleration = newAcceleration;
+        Debug.Log("Car Acceleration Slider Value: " + newAcceleration); 
     }
 
     public void SpawnCar()
