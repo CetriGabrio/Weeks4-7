@@ -14,13 +14,18 @@ public class MenuController : MonoBehaviour
     public TMP_Dropdown carDropdown;
     public Image carPreview;
 
-    private float carSpeed;
-    private float carAcceleration;
+    private float carSpeed = 5f;
+    private float carAcceleration = 0.1f;
 
     void Start()
     {
+        //if (carDropdown != null)
+        //{
+        //UpdateCarPreview(carDropdown.value);
+        // }
         UpdateCarPreview(carDropdown.value);
-
+        speedSlider.value = carSpeed;
+        accelerationSlider.value = carAcceleration;
     }
 
     public void SetCarSpeed(float newSpeed)
