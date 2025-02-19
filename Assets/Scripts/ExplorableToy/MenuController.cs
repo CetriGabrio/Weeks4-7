@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor;
 
 public class MenuController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class MenuController : MonoBehaviour
     public Slider yPositionSlider;
     public TMP_Dropdown carDropdown;
     public Image carPreview;
+   
 
     private float carSpeed = 5f;
     private float carAcceleration = 0.1f;
@@ -27,6 +29,7 @@ public class MenuController : MonoBehaviour
         UpdateCarPreview(carDropdown.value);
         speedSlider.value = carSpeed;
         accelerationSlider.value = carAcceleration;
+        carSpeed = speedSlider.value;
     }
 
     public void SetCarSpeed(float newSpeed)
