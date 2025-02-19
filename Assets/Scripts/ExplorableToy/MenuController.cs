@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEditor;
 
 public class MenuController : MonoBehaviour
 {
@@ -14,34 +13,37 @@ public class MenuController : MonoBehaviour
     public Slider yPositionSlider;
     public TMP_Dropdown carDropdown;
     public Image carPreview;
-   
+    public Sprite[] carSprites; 
 
     private float carSpeed = 5f;
     private float carAcceleration = 0.1f;
+    private int previousDropdownValue = -1;
 
     void Start()
     {
-        //if (carDropdown != null)
-        //{
-        //UpdateCarPreview(carDropdown.value);
-        // }
+        carPreview.sprite = null;
 
         UpdateCarPreview(carDropdown.value);
+
         speedSlider.value = carSpeed;
         accelerationSlider.value = carAcceleration;
+
         carSpeed = speedSlider.value;
+        carAcceleration = accelerationSlider.value;
+
+        previousDropdownValue = carDropdown.value;
     }
 
-    public void SetCarSpeed(float newSpeed)
+    void Update()
     {
-        carSpeed = newSpeed;
-        Debug.Log("Car Speed Slider Value: " + newSpeed); 
-    }
+        carSpeed = speedSlider.value;
+        carAcceleration = accelerationSlider.value;
 
-    public void SetCarAcceleration(float newAcceleration)
-    {
-        carAcceleration = newAcceleration;
-        Debug.Log("Car Acceleration Slider Value: " + newAcceleration); 
+        if (carDropdown.value != previousDropdownValue)
+        {
+            UpdateCarPreview(carDropdown.value);
+            previousDropdownValue = carDropdown.value;
+        }
     }
 
     public void SpawnCar()
@@ -52,10 +54,16 @@ public class MenuController : MonoBehaviour
         GameObject car = Instantiate(carPrefabs[selectedCarIndex], new Vector3(-10, yPosition, 0), Quaternion.identity);
         CarMovement carMovement = car.GetComponent<CarMovement>();
         carMovement.Initialize(carSpeed, carAcceleration);
+
+        //Debug.Log("Spawning car with speed: " + carSpeed + " and acceleration: " + carAcceleration);
     }
 
     private void UpdateCarPreview(int index)
     {
-        carPreview.sprite = carPrefabs[index].GetComponent<SpriteRenderer>().sprite;
+        if (index >= 0 && index < carSprites.Length)
+        {
+            carPreview.sprite = carSprites[index];
+            //Debug.Log("Updated car preview for car index: " + index);
+        }
     }
 }

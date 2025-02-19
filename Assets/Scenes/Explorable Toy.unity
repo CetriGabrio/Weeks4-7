@@ -561,7 +561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 163583539}
   - component: {fileID: 163583541}
-  - component: {fileID: 163583540}
+  - component: {fileID: 163583542}
   m_Layer: 5
   m_Name: CarPreview
   m_TagString: Untagged
@@ -588,7 +588,15 @@ RectTransform:
   m_AnchoredPosition: {x: -5.4895, y: 148}
   m_SizeDelta: {x: 89.021, y: 67.0631}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &163583540
+--- !u!222 &163583541
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163583538}
+  m_CullTransparentMesh: 1
+--- !u!114 &163583542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -608,7 +616,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 489548066, guid: 750385e77543719429c6355018de1ded, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -618,14 +626,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &163583541
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163583538}
-  m_CullTransparentMesh: 1
 --- !u!1 &254953315
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +795,7 @@ MonoBehaviour:
       - m_Target: {fileID: 299758124}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: SetCarSpeed
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -914,7 +914,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299758119}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6a3d14f2599f2d468d79bb6161604b5, type: 3}
   m_Name: 
@@ -929,7 +929,12 @@ MonoBehaviour:
   accelerationSlider: {fileID: 468772884}
   yPositionSlider: {fileID: 2145276317}
   carDropdown: {fileID: 850934545}
-  carPreview: {fileID: 163583540}
+  carPreview: {fileID: 163583542}
+  carSprites:
+  - {fileID: 489548066, guid: 750385e77543719429c6355018de1ded, type: 3}
+  - {fileID: -1841743668, guid: 750385e77543719429c6355018de1ded, type: 3}
+  - {fileID: -1757976706, guid: 750385e77543719429c6355018de1ded, type: 3}
+  - {fileID: 1654065619, guid: 750385e77543719429c6355018de1ded, type: 3}
 --- !u!1 &305293665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,7 +1274,7 @@ MonoBehaviour:
       - m_Target: {fileID: 299758124}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: SetCarAcceleration
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1628,16 +1633,28 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: Police Car
-      m_Image: {fileID: -1841743668, guid: 750385e77543719429c6355018de1ded, type: 3}
-    - m_Text: Race Car
       m_Image: {fileID: 489548066, guid: 750385e77543719429c6355018de1ded, type: 3}
+    - m_Text: Race Car
+      m_Image: {fileID: -1841743668, guid: 750385e77543719429c6355018de1ded, type: 3}
     - m_Text: Camion
       m_Image: {fileID: -1757976706, guid: 750385e77543719429c6355018de1ded, type: 3}
     - m_Text: Tractor
       m_Image: {fileID: 1654065619, guid: 750385e77543719429c6355018de1ded, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 850934545}
+        m_TargetAssemblyTypeName: TMPro.TMP_Dropdown, Unity.TextMeshPro
+        m_MethodName: set_value
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &850934546
 MonoBehaviour:
@@ -3789,7 +3806,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 299758119}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
