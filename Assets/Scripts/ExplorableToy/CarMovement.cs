@@ -19,14 +19,18 @@ public class CarMovement : MonoBehaviour
 
     void Update()
     {
-        if (gameObject != null)
-        {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
+        speed += acceleration * Time.deltaTime;
+        transform.Translate(Vector3.right * speed * Time.deltaTime);
 
-            if (transform.position.x > rightScreenEdge)
-            {
-                transform.position = new Vector3(leftScreenEdge, transform.position.y, transform.position.z);
-            }
+        if (transform.position.x > rightScreenEdge)
+        {
+            transform.position = new Vector3(leftScreenEdge, transform.position.y, transform.position.z);
         }
+    }
+
+    public void Initialize(float speed, float acceleration)
+    {
+        this.speed = speed;
+        this.acceleration = acceleration;
     }
 }

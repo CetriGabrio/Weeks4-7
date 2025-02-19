@@ -170,7 +170,6 @@ GameObject:
   - component: {fileID: 63805872}
   - component: {fileID: 63805871}
   - component: {fileID: 63805870}
-  - component: {fileID: 63805873}
   m_Layer: 5
   m_Name: SpawnButton
   m_TagString: Untagged
@@ -241,7 +240,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 63805871}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: d6a3d14f2599f2d468d79bb6161604b5, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &63805871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,20 +291,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63805868}
   m_CullTransparentMesh: 1
---- !u!114 &63805873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63805868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6a3d14f2599f2d468d79bb6161604b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carPrefab: {fileID: 2559890947634848755, guid: cd88d171e093b1b42b51fd648047978a, type: 3}
-  spawnButton: {fileID: 63805870}
 --- !u!1 &115649872
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +804,7 @@ GameObject:
   - component: {fileID: 299758122}
   - component: {fileID: 299758121}
   - component: {fileID: 299758120}
+  - component: {fileID: 299758124}
   m_Layer: 5
   m_Name: UIMenu
   m_TagString: Untagged
@@ -897,6 +895,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &299758124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299758119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a3d14f2599f2d468d79bb6161604b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carPrefabs:
+  - {fileID: 2559890947634848755, guid: cd88d171e093b1b42b51fd648047978a, type: 3}
+  - {fileID: 2328990728177233657, guid: 3ec0e96dee0e3434c99aa820821581c2, type: 3}
+  - {fileID: 7319569833532950640, guid: faa533820b8e9764697dc1dc487049d7, type: 3}
+  - {fileID: 1436596323209591534, guid: e1c296efbdc398549a5365eb1f1f9450, type: 3}
+  spawnButton: {fileID: 63805870}
+  speedSlider: {fileID: 260807857}
+  accelerationSlider: {fileID: 468772884}
+  yPositionSlider: {fileID: 2145276317}
+  carDropdown: {fileID: 850934545}
+  carPreview: {fileID: 163583540}
 --- !u!1 &305293665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,7 +1586,7 @@ GameObject:
   - component: {fileID: 850934546}
   - component: {fileID: 850934545}
   m_Layer: 5
-  m_Name: CarTypeDropdown
+  m_Name: CarDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
