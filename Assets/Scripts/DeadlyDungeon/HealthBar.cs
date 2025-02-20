@@ -30,10 +30,22 @@ public class HealthBar : MonoBehaviour
     {
         curHealth -= damage;
         SetHealth(curHealth);
+
+        if (curHealth == 0)
+        {
+            Die();
+        }
     }
 
     public void SetHealth(int hp)
     {
         healthBar.value = hp;
     }
+
+    void Die()
+    {
+        Debug.Log("Player died!");
+        Destroy(gameObject);
+    }
 }
+
