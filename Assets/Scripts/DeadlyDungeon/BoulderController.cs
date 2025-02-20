@@ -6,7 +6,7 @@ public class BoulderController : MonoBehaviour
 {
     public float speed = 5f;
     private Vector2 velocity;
-    public GameObject player; // Reference to the player GameObject
+    public GameObject player; 
 
     void Start()
     {
@@ -35,15 +35,15 @@ public class BoulderController : MonoBehaviour
     void CheckCollisionWithPlayer()
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
-        Debug.Log("Distance to player: " + distance); // Debug log to check distance
-        if (distance < 1f) // Adjust this value based on the size of your objects
+        Debug.Log("Distance to player: " + distance); 
+        if (distance < 1f) 
         {
-            Debug.Log("Collision with player detected!"); // Debug log for collision detection
+            Debug.Log("Collision with player detected!"); 
             HealthBar healthBar = player.GetComponent<HealthBar>();
             if (healthBar != null)
             {
                 healthBar.DamagePlayer(10);
-                Debug.Log("Player health after damage: " + healthBar.curHealth); // Debug log for player health
+                Debug.Log("Player health after damage: " + healthBar.curHealth); 
             }
         }
     }
