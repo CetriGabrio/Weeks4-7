@@ -1,18 +1,39 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int curHealth = 0;
+    public int maxHealth = 100;
+    public Slider healthBar;
+
     void Start()
     {
-        
+        curHealth = maxHealth;
+        healthBar = GetComponent<Slider>();
+        healthBar.maxValue = maxHealth;
+        healthBar.value = maxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            DamagePlayer(10);
+        }
+    }
+
+    public void DamagePlayer(int damage)
+    {
+        curHealth -= damage;
+        SetHealth(curHealth);
+    }
+
+    public void SetHealth(int hp)
+    {
+        healthBar.value = hp;
     }
 }
