@@ -16,6 +16,7 @@ public class HealthBar : MonoBehaviour
         healthBar = GetComponent<Slider>();
         healthBar.maxValue = maxHealth;
         healthBar.value = maxHealth;
+        Debug.Log("HealthBar initialized. MaxHealth: " + maxHealth);
     }
 
     void Update()
@@ -28,10 +29,11 @@ public class HealthBar : MonoBehaviour
 
     public void DamagePlayer(int damage)
     {
+        Debug.Log("DamagePlayer called. Current Health: " + curHealth);
         curHealth -= damage;
         SetHealth(curHealth);
 
-        if (curHealth == 0)
+        if (curHealth <= 0)
         {
             Die();
         }
@@ -39,6 +41,7 @@ public class HealthBar : MonoBehaviour
 
     public void SetHealth(int hp)
     {
+        Debug.Log("SetHealth called. Health: " + hp);
         healthBar.value = hp;
     }
 
@@ -48,4 +51,3 @@ public class HealthBar : MonoBehaviour
         Destroy(gameObject);
     }
 }
-
